@@ -1,2 +1,2 @@
 # angular_4
-Practice code for angular 4
+Practice projects for angular 4
