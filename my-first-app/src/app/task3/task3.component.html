@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <p>Add a button with 'Display details'</p>
+    <p>Add a p with any text</p>
+    <p>Toggle p based on click</p>
+    <p>Log all button clicks and display below p</p>
+    <p>Starting from 5th item , add bluebackground ngStyle and white color ngClass</p>
+    <hr>
+    <button
+      class="btn btn-primary"
+      (click)="onButtonClick()">
+      Display details
+    </button>
+    <p *ngIf="showText">Password = 'TUNA'</p>
+    <p
+      *ngFor="let log of logs"
+      [ngStyle]=" { backgroundColor : log > 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{ white : log > 4 }">
+      {{ log }}
+    </p>
+
+  </div>
+</div>
+l

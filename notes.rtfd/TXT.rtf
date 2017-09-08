@@ -1,0 +1,1286 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red202\green202\blue202;\red23\green23\blue23;\red140\green211\blue254;
+\red194\green126\blue101;\red167\green197\blue152;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
+\red88\green118\blue71;\red133\green96\blue154;\red38\green38\blue38;\red255\green255\blue255;\red197\green35\blue42;
+\red241\green241\blue241;\red70\green137\blue204;\red67\green192\blue160;\red212\green214\blue154;\red183\green111\blue179;
+\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c83137\c83137\c83137;\cssrgb\c11765\c11765\c11765;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c52157\c37647\c60392;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000;\cssrgb\c82353\c21961\c21569;
+\cssrgb\c95686\c95686\c95686;\cssrgb\c33725\c61176\c83922;\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;\cssrgb\c77255\c52549\c75294;
+\cssrgb\c50196\c50196\c50196;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20580\viewh13680\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 To install angular client need to use npm module - \
+\
+sudo npm install -g @angular/cli\
+\
+TO create a new app - \
+
+\b  ng new <app_name>
+\b0 \
+	ng new my-first-app\
+	will make a new folder and download all dependencies\
+\
+TO run it - \
+
+\b  ng serve
+\b0  - will run on development server on port - localhost:4200\
+\
+HTMl present in app.component.html and the value of variable present in app.component.ts\
+\
+to change the port number app is working on ->\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+  \cf4 "defaults"\cf2 : \{\cb1 \
+\cb3     \cf4 "styleExt"\cf2 : \cf5 "css"\cf2 ,\cb1 \
+\cb3     \cf4 "component"\cf2 : \{\},\cb1 \
+\cb3     \cf4 "serve"\cf2 : \{\cb1 \
+\cb3       \cf4 "port"\cf2 : \cf6 4444\cf2 \cb1 \
+\cb3     \}\cb1 \
+\cb3   \}\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+add serve in defaults and provide the requrired port no.\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+It may happen that 
+\b input
+\b0  won\'92t work - that is because of dependency missing to correct it - \
+need to add some code in 
+\b app.module.ts
+\b0  - replace with this one\
+\
+		import \{ BrowserModule \} from '@angular/platform-browser';\
+		import \{ NgModule \} from '@angular/core';\
+\
+		import \{ AppComponent \} from './app.component';\
+		import \{ FormsModule \} from '@angular/forms';\
+\
+		@NgModule(\{\
+		declarations: [\
+		AppComponent\
+		],\
+		imports: [\
+		BrowserModule, FormsModule\
+		],\
+		providers: [],\
+		bootstrap: [AppComponent]\
+		\})\
+		export class AppModule \{ \}\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\b Typescript
+\b0  - super set to javascript - more features than vanilla JS ( types, classes , interfaces ) \
+\
+TO add bootstrap , we can import it in index.html file or better way would be to install it using 
+\b npm\
+npm install  - -save bootstrap\
+\
+
+\b0 Open angular-cli.json \'97> styles array add reference to bootstrap file downloaded - \'93../node_modules/bootstrap/dist/css/bootstrap.min.css\'94\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+in app.component.ts - selector\'92s value is set as app-root \'97>so its replaced with the html in app.component files\
+\
+In main.ts - bootstraoModules starts our project by passing the module\
+In app.module.te - inside bootstrap lists all components that the app should know to run\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\b Components - \
+\
+
+\b0 all app related content goes into app folder - components\
+component is defined in .ts file and the template url is provided in it.\
+\
+Ex - 
+\f2\b \cf7 \cb8 import 
+\f1\b0 \cf9 \{ Component \} 
+\f2\b \cf7 from 
+\f1\b0 \cf10 '@angular/core'\cf7 ;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf9 @Component(\{\
+  \cf11 selector \cf9 : \cf10 'app-server'\cf7 ,\
+  \cf11 templateUrl\cf9 : \cf10 './server.component.html'\
+\cf9 \})\
+
+\f2\b \cf7 export class 
+\f1\b0 \cf9 ServerComponent \{\
+\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \
+Here the app-server is the name to be used while using it in html\
+
+\b <app-server></app-server>
+\b0 \
+\
+To use this component  it needs to be declared in app.module.ts\
+The component name is given in 
+\b declarations in @NgModule 
+\b0 . Still TS cannot identify it what component it is.\
+So it is imported in the beginning by providing the component name and the path\
+\
+Ex - import \{ ServerComponent \} form \'91./server/server.component\'92
+\b \
+\
+To create a component angular cli can also be used - \
+ng g c <component-name>\
+\
+* use \'97spec false -> to prevent creation of testing file \
+\
+\
+
+\b0 To write  multi line string in TS - 
+\b `   ` 
+\b0 needs to used
+\b \
+\
+To make it as an attribute - enclose the sector name in []\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\b0 \cf11 \cb8 selector \cf9 : \cf10 \'91[app-server]\'92\cf7 ,
+\f0\b \cf0 \cb1 \
+To make it as a class - start with .\
+
+\f1\b0 \cf11 \cb8 selector \cf9 : \cf10 \'91.app-server\'92\cf7 ,
+\f0\b \cf0 \cb1 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 TO
+\b  
+\b0 output data - \
+string interpolation  - \{\{ data \}\}\
+property binding - [property] = \'93data\'94
+\b \
+\
+
+\b0 to react to user interaction\
+event binding - (event) = \'93expr\'94\
+\
+2 way binding\
+[(ngModel)] = \'93data\'94\
+
+\b \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+String interpolation - \
+
+\b0 \
+
+\b ** 
+\b0 \
+to add type of variable in typescript - \
+	serverID : number = 10;\
+	servenerName : string = \'91asd\'92;
+\b \
+**
+\b0 \
+
+\b \
+
+\b0 \{\{ <should be able to convert to a string> \}\}\
+cannot write multi line string\
+\
+
+\b **\
+to define a method in typescript\
+	
+\b0 getServerStatus() \{\
+		return this.serverName;\
+	\}
+\b \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b0 to bind html - \
+<p [innerText] = \'93variable_name\'94></p>\
+\
+property binding and string interpolation shouldn\'92t be used together\
+\{\{\}\} braces need not to be added in property binding \
+\
+For event binding  - parenthesis is used\
+(click) = \'93<something to do>\'94\
+\
+for form elements - \
+(input)  =  to register input events\
+$event = data emitted with that event
+\b \
+\
+for 2 way binding - \
+
+\b0 [(ngModel)] = \'91serverName\'92\
+\
+\pard\pardeftab720\sl440\sa400\partightenfactor0
+
+\f3\fs36 \cf12 \cb13 \expnd0\expndtw0\kerning0
+Important:\'a0For Two-Way-Binding to work, you need to enable the 
+\f4 \cf14 \cb15 ngModel
+\f3 \cf12 \cb13 \'a0 directive. This is done by adding the 
+\f4 \cf14 \cb15 FormsModule
+\f3 \cf12 \cb13 \'a0 to the 
+\f4 \cf14 \cb15 imports[]
+\f3 \cf12 \cb13 \'a0 array in the AppModule.\
+You then also need to add the import from 
+\f4 \cf14 \cb15 @angular/forms
+\f3 \cf12 \cb13 \'a0 in the app.module.ts file:\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f4 \cf14 \cb15 import \{ FormsModule \} from '@angular/forms';
+\f3 \cf12 \cb13 \'a0\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b0 Directives are instructions in the DOM \
+\
+for ngIf - * is required - * depicts structural directive\
+so used like 
+\b *ngIf=\'93\'94\
+\
+else condition can also be used with ngIf -\
+\
+
+\b0 <p ngIf=\'93 someCOndition; else elsePart\'94></p>\
+\
+<ng-template #elsePart>\
+	<p>assad</p>\
+</ng-template>
+\b  \
+\
+Now the elsePart acts like an anchor and tells ngIf , if condition is false then the ngTemplate with that anchor should be displayed.\
+\
+\
+ngStyle \'97> [] indicate we want to bind some property on this directive. In this case, property name is same as directive.
+\b0 \
+[ngStyle] = \'93 \{ backgroundColor : getColor() \} \'94\
+\
+\
+*ngFor - again structural directive
+\b \
+\
+to get index in  FOR loop - \
+use let i = index -> index inbuilt reserved word to get loop index 0,1,2\'85.\
+\
+*ngFor=\'93let log of logs; let i in index\'94\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\b0 \cf0 \
+\
+\
+Instead of src=\'93 \{\{ and \}\} \'94\
+use [src] = \'93and\'94 -> combination of string interpolation\
+\
+\
+to declare an object in TS - \
+\
+elect : \{ name: string. content: string \}\
+\
+all property of  a component is accessible only in that component, not outside it\
+\
+to make it accessible outside it ->\
+\
+also import Input on top\
+@Input() element : \'85.\
+\
+then it can be used like -> passing value to a component\
+[element] = \'93some_value\'94\
+\
+to make an alias of a property of a component->\
+@Input( \'91srvElement\'92 ) element : \'85.\
+\
+So outside this component srvElement would be used and not 
+\b element
+\b0 \
+\
+TO create a custom event ->\
+serverCreated = new EventEmmitter<some_value_like_object>();\
+\
+import EventEmmitter from angularCore\
+to fire an event ->  this.serverCreated.emit( some_value_to_be_passed);\
+\
+to make an event listenable from outside the component use ->\
+
+\b @Output() , also import on tp from angular core
+\b0 \
+\
+to assign an alias to a custom event- \
+give name in the @Output( \'91Some_name\'92 )\
+\
+to listen this event somewhere -<\
+[ Some_name ] = \'93some_thing\'94\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b Encapsulation ->
+\b0 \
+\
+to remove view encapsulation  -> i.e. to apply\
+ css globally -> remove shadow dom tech\
+use in @Components this property\
+encapsulation : ViewEncapsulation.NONE, ->  CSS used globally\
+\
+encapsulation : ViewEncapsulation.NATIVE -> use shadow DOM tech -> css not used globally\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b Local reference ->
+\b0 \
+\
+provide any local reference to any tag like input by->\
+<input 
+\b #serverNameInput
+\b0  />\
+\
+this reference can only be used on HTML not in TS\
+\
+using this local reference entire element is retrieved with all its properties. In this case entire input tag is stored in the reference\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b @ViewChild ->
+\b0 \
+\
+to get the DOM value inside typescript ->\
+\
+
+\b @ViewChild( \'91serverNameInput\'92 ) serverContentInput : ElementRef; \
+-> we get a element reference  in this case\
+-> to use the input value -> this.serverContentInput.nativeElement.value\
+
+\b0 \
+\
+need to pass some reference -> like to the input local reference above as a string\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b ng-content ->
+\b0 \
+\
+if some element is added in a app-element\
+<app-ss>\
+	<p></p>\
+</app-ss>\
+\
+\
+ideally this p tag won\'92t be rendered. to get it we need to use 
+\b ng-content 
+\b0 in  html of the 
+\b ss component. Use ng-content wherever p tag need to be rendered inside that component\
+\
+
+\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b ngOnIt() ->\
+\
+lifecycle hooks -> 
+\b0 each hook needs to be implemented to be used and also imported from angular/core
+\b \
+\
+ngOnChanges
+\b0  -> when new component created & after any property changes ( @input ) \
+receives input ->
+\b   changes: SimpleChanges \
+
+\b0 SimpleChanges  also needs to be imported\
+\
+\
+
+\b ngOnInit
+\b0  -> when component has been initialised , run after constructor\
+\
+
+\b ngDoCheck
+\b0  -> run whenever change detection runs -> determines whenever anything change like property\
+\
+
+\b ngAfterContentInit
+\b0  -> after ng-component has been projected into view\
+\
+
+\b ngAfterContentChecked
+\b0  -> after projected content has been checked\
+\
+
+\b ngAfterViewInit
+\b0  -> after components view has been initialised\
+\
+
+\b ngAfterViewChecked
+\b0  -> when view has been checked\
+\
+
+\b ngOnDestroy
+\b0  -> when component is about to be destroyed\
+\
+\
+ \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b @ContentChild ->\
+\
+ similar to ViewChild, but for ng-content -> use DOM passed via ng-content\
+\
+
+\b0  \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b TO listen to some event \
+@Hostistener( <event_name> )\
+\
+
+\b0 @HostListener( \'91mouseenter\'92 ) mouseover( eventDate: Event ) \{\
+	\
+\}\
+\
+
+\b @HostBinding( property_of_hosting_element )  some_property: type;
+\b0 \
+\
+@HostBinding( \'91style.backgroundColor\'92 ) backgroundColor: string;\
+\
+then no need to use renderer-> simply change the above value to change the background colour like\
+this.backgroundColor = some_color\
+\
+\
+
+\b **Note - >\
+
+\b0 when passing string values to a variable by making use of @Input ->\
+[something] = \'93 \'91red\'92 \'93\
+then in this case [] and \'91 \'92 can be ommitted\
+to -> something = \'93 red \'93\
+\
+this is a special case only for string property binding \
+\
+\
+\
+*ngIf basically transforms to form of ng-template\
+\
+<div *ngIf=\'93condiion\'94>\
+\
+
+\b to
+\b0 \
+\
+<ng-template [ngIf]=\'93condition\'94>\
+	<div>\
+</ng-template>\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b Services - \
+\
+
+\b0 every hierarchy gets its own instance of the same service.\
+\
+and it can not be propagated upward\
+\
+parent -> child -> child\
+\
+to use the same instance of the parent service injected ->\
+dont provide it in the providers array. Providing it there creates a new instance for that child\
+\
+Highest possible is in the app-module -> a service can be added there so that all the components get the same instance of that service\
+\
+using this a service can be used within the service ->\
+for a service to be injected a meta data is expected, which is provided in the @Component or @Directive . \
+But for service there is no such meta data present\
+\
+So this can be done by using -\
+@Injectable()  -> means something can be injected into this service\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\b Routing - \
+\
+
+\b0 <router-outlet></router-outlet>\
+- marks the place in html where we want angular to load the component after routing\
+\
+\
+Need to add Routes in app.module.ts of type Route -\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf16 \cb3 \expnd0\expndtw0\kerning0
+const\cf2  \cf4 appRoutes\cf2  : \cf17 Routes\cf2  = [\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3   \{ \cf4 path:\cf2  \cf5 ''\cf2 , \cf4 component:\cf2  \cf4 HomeComponent\cf2  \},\cb1 \
+\cb3   \{ \cf4 path:\cf2  \cf5 'users'\cf2 , \cf4 component:\cf2  \cf4 UsersComponent\cf2  \},\cb1 \
+\cb3   \{ \cf4 path:\cf2  \cf5 'servers'\cf2 , \cf4 component:\cf2  \cf4 ServersComponent\cf2  \}\cb1 \
+\cb3 ]\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+also need to import router module from \'91@angular/router\'92\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+  \cf4 imports:\cf2  [\cb1 \
+\cb3     \cf4 BrowserModule\cf2 ,\cb1 \
+\cb3     \cf4 FormsModule\cf2 ,\cb1 \
+\cb3     \cf4 HttpModule\cf2 ,\cb1 \
+\cb3     \cf4 RouterModule\cf2 .\cf18 forRoot\cf2 ( \cf4 appRoutes\cf2  )\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+
+\b0 To navigate around href is not used since it would reload the entire app and state would be lost\
+Instead 
+\b routerLink =\'93/\'94 is used\
+
+\b0  
+\b routerLink =\'93/servers\'94\
+[routerLink] = \'93 [ \'91/users\'92 , params, params] \'94
+\b0 \
+\
+\
+/ - can be omitted. It would make path relative and not absolute.. Would be appended to existing one\
+But then it would search for something inside the already loaded url\
+\
+ex -  if inside localhost:4200/servers ->\
+inside if  
+\b routerLink =\'93servers\'94 is used then it would go to servers/servers\
+
+\b0 but if  
+\b routerLink =\'93/servers\'94 then it would go to localhost:4200/srevers only\
+\
+
+\b0 to add a class to a tag based on routing\
+
+\b routerLinkActive
+\b0  = \'93 className\'94 is used\
+\
+it checks for the path u are currently on and the route directing to it and adds the classes to it.\
+It also adds class if some tab contains part of the path\
+so if we are on localhost:4200/servers  - then class would be added to link directing to above and also to 
+\b localhost:4200 - in this case Home.\
+\
+TO avoid this we can use [routerLinkActiveOptions] = \'93 \{ exact : true \} \'93\
+
+\b0 so now it would add class only if path is path is exactly same\
+\
+to route form TS file from a function ->\
+router can be used\
+* inside constructor needs to be injected\
+* then inside function this.router.navigate( [ \'91/servers\'92 ] );\
+\
+
+\b this.router.navigate( [ \'91/servers\'92 ] ); - 
+\b0 \
+if we remove / -> then it should convert to relative path but is doesn\'92t since the component doesn\'92t know where it sits. So it considers it as absolute only.\
+\
+TO enable it we can user an extra property in navigate by using 
+\b relativeTo
+\b0 \
+
+\b this.router.navigate( [ \'91/servers\'92 ], \{ navigateTo: this.route \} ); - 
+\b0 \
+\
+
+\b this.route - 
+\b0 it is current path app is on..\
+to get this path 
+\b ActivatedRoute needs to be injected in constructor from @angular/router\
+private route : ActivatedRoute
+\b0 \
+\
+\
+\
+To pass a parameter in path while routing - \
+inside appModule, where routes are defined\
+\{ path: \'91users/:id, \'85. \}\
+to pass more than 1 
+\b users/:id/:name
+\b0 \
+\
+after / -> : is inserted to denote query param followed by any variable. In this case :id\
+\
+to get the query param from url->\
+ActivatedRoute is used, which needs to be injected in the constructor\
+then we an fetch the variable by ->\
+
+\b this.route.snapshot.params[ \'91 id\'92 ];
+\b0 \
+
+\b this.route.snapshot.params[ \'91 name\'92 ];
+\b0 \
+\
+This snapshot approach would fail if we again load the same component from that particular component, since angular wouldn\'92t load the same component it is on again. So the data wouldn\'92t be updated although the path may update.\
+to avoid this problem -> 
+\b this.route.params.subscribe() 
+\b0 can be used\
+\
+
+\b this.route.params.subscribe(\
+	(params: Params)=> \{\
+		this.user.id = params[\'91id];\
+	\}\
+)\
+\
+\
+TO pass query params in the url from HTML - \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+        [\cf4 routerLink\cf2 ] = \cf5 "['/server', 5, 'edit']"\cf2 \cb1 \
+\cb3         [\cf4 queryParams\cf2 ] = \cf5 "\{ allowEdit: 1  \}"\cf2 \cb1 \
+\cb3         \cf4 fragment\cf2  = \cf5 "loading\cf2 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0  above method can be used. This would create url like ->\
+
+\b server/5/edit?allowEdit=1#loading
+\b0 \
+\
+\
+Also this can be done from JS also - \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+ \cf16 this\cf2 .\cf4 router\cf2 .\cf18 navigate\cf2 ([ \cf5 '/server'\cf2 , \cf4 id\cf2 , \cf5 'edit'\cf2  ], \{ \cf4 queryParams :\cf2  \{ \cf4 allowEdit :\cf2  \cf6 1\cf2 \}, \cf4 fragment :\cf2  \cf5 "loading"\cf2  \});\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+we can get the query params and fragment we can use the above approach used for params - \
+
+\b this.route.snapshot.queryParams;
+\b0 \
+
+\b this.route.<queryParams or fragment>.subscribe(\
+	(params: Params)=> \{\
+		this.user.id = params[\'91id];\
+	\}\
+)\
+
+\b0 \
+\
+To preserve the query params from 1 component to another - >\
+\
+we can use-> \
+
+\b queryParamsHandling 
+\b0 property of this.router.navigate\
+\
+this.router.navigate( [\'91edit\'92], \{ 
+\b queryParamsHandling: \'91preserve\'92
+\b0  \}\
+ \
+
+\b preserve
+\b0  to pass on the existing ones\
+
+\b merge 
+\b0 to add new values to existing ones\
+\
+
+\b redirectTo
+\b0  can be used to redirect to any other component/path we want.\
+to do this we can use this property in app.module while defining appRoutes.\
+\
+To catch all the unknown path->\
+
+\b path: \'91**\'92, redirectTo: \'91/not-found\'92\
+should be defined at last, otherwise all routes will redirect to not-found\
+\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f4\b0\fs36 \cf14 \cb15 \expnd0\expndtw0\kerning0
+\{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' \}
+\f3 \cf12 \cb13 \'a0\cb1 \uc0\u8232 \
+\pard\pardeftab720\sl440\sa400\partightenfactor0
+\cf12 \cb13 Now, you only get redirected, if the full path is\'a0
+\f4 \cf14 \cb15 ''
+\f3 \cf12 \cb13 \'a0\'a0(so only if you got NO\'a0other content in your path in this example).\cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf12 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 Guards - \
+\
+
+\b0 To protect the routes guards is used\
+\
+
+\b auth-guard.service.ts\
+
+\b0 \
+export class AuthGuard implements CanActivate \{\
+\
+	canActivate( route: ActivatedRouteSnapshot,\
+			state: RouterStateSnapshot )\
+			: Observable<boolean> | \
+			Promise<boolean> |\
+			boolean  \{\
+\
+	\}\
+\
+\}
+\b \
+\
+\
+To 
+\b0 make a route use the above guard ->\
+in app-routing ->\
+canActivate: [ AuthGuard ] can be used\
+will be applied automatically to child routes also
+\b \
+\
+\
+\
+To protect only child routes-> CanActivateChild can be implemented.\
+Rest everything us same\
+And in app-routing, instead of canActivate -> canActivateChild can be used\
+\
+To 
+\b0 stop from navigating -> canDeactivate is used\
+\
+To pass a static data into a component from routing->\
+in app-routing ->\
+data : \{ message: \'93Page not found\'94 \}\
+\
+in component ->\
+constructor ( private route: ActivatedRoute )\
+\
+ngOnInIt() \{\
+	this.route.snapshot.data[ \'91message\'92 ];\
+\}
+\b \
+\
+\
+\
+
+\b0 Using a resolver to get dynamic data before actual routing happens.\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+@\cf18 Injectable\cf2 ()\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf19 \cb3 export\cf2  \cf16 class\cf2  \cf17 ServerResolver\cf2  \cf16 implements\cf2  \cf17 Resolve\cf2 <\cf17 Server\cf2 > \{\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3     \cb1 \
+\cb3     \cf16 constructor\cf2 (\cf16 private\cf2  \cf4 serversServie\cf2 : \cf17 ServersService\cf2 ) \{\}\cb1 \
+\
+\cb3     \cf18 resolve\cf2 (\cf4 route\cf2 : \cf17 ActivatedRouteSnapshot\cf2 , \cb1 \
+\cb3         \cf4 state\cf2 : \cf17 RouterStateSnapshot\cf2 ): \cf17 Server\cf2  | \cf17 Observable\cf2 <\cf17 Server\cf2 > | \cf17 Promise\cf2 <\cf17 Server\cf2 > \{\cb1 \
+\cb3             \cf19 return\cf2  \cf16 this\cf2 .\cf4 serversServie\cf2 .\cf18 getServer\cf2 (+\cf4 route\cf2 .\cf4 params\cf2 [\cf5 'id'\cf2 ]);\cb1 \
+\cb3         \cb1 \
+\cb3     \}\cb1 \
+\
+\
+\cb3 \}\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+\
+\
+Understanding local strategies ->\
+\
+
+\b0 any route first is handled by the server and not the angular app.\
+So in this case we might get an error on prod as 404.\
+\
+To avoid this we may use 
+\b \'91#\'92. \
+To do this, app-routing ->\
+under imports\
+.forRoot(   , \{ useHash: true \})\
+\
+Also a better technique is there which involves changing the configuration of the server. Might come in section under deployment.\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Observables - \
+\
+
+\b0 to create a new observable -\
+need to import \
+rxjs/Rx\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+    \cf16 const\cf2  \cf4 myNumbers\cf2  = \cf4 Observable\cf2 .\cf18 interval\cf2 (\cf6 1000\cf2 );\cb1 \
+\cb3     \cf4 myNumbers\cf2 .\cf18 subscribe\cf2 (\cb1 \
+\cb3       (\cf4 number\cf2 : \cf17 number\cf2 ) \cf16 =>\cf2  \{\cb1 \
+\cb3         \cf17 console\cf2 .\cf18 log\cf2 (\cf4 number\cf2 );\cb1 \
+\cb3       \}\cb1 \
+\cb3     );\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+\
+ALWAYS REMEMBER TO DESTROY THE OBSERVABLE OTHERWISE IT WOULD CREATE A MEMORY LEAK, AND WOULD GO ON EVEN AFTER DESTROYING THE COMPONENT\
+\
+To store a observable = myobs.subscribe object , use Subscription from rxjs\
+\
+numberSubs : Subscription\
+\
+Do this.numberSubs.unsubscribe() in ngOnDestroy()\
+\
+\
+\
+\
+
+\b0 Instead of using event emitters a better approach would be to use 
+\b Subject , 
+\b0 which is just like Observables, where same const can be used to emit an event and also to subscribe to it.\
+\
+DEFINE ->\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf19 \cb3 \expnd0\expndtw0\kerning0
+import\cf2  \{ \cf4 Subject\cf2  \} \cf19 from\cf2  \cf5 "rxjs/Subject"\cf2 ;\cb1 \
+\
+\cf19 \cb3 export\cf2  \cf16 class\cf2  \cf17 UserService\cf2  \{\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3     \cf4 userActivated\cf2  = \cf16 new\cf2  \cf17 Subject\cf2 ();\cb1 \
+\cb3 \}\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+EMIT ->\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0 \cf16 \cb3 \expnd0\expndtw0\kerning0
+this\cf2 .\cf4 userService\cf2 .\cf4 userActivated\cf2 .\cf18 next\cf2 ( \cf16 this\cf2 .\cf4 id\cf2  );    \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+\
+Subscribe ->\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0 \cf16 \cb3 \expnd0\expndtw0\kerning0
+this\cf2 .\cf4 userService\cf2 .\cf4 userActivated\cf2 .\cf18 subscribe\cf2 (\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3     \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+FORMS - \
+\
+
+\b0 2 approaches - \
+ - template approach \
+- reactive approach - more control by user\
+\
+
+\b \
+Template approach -\
+\
+
+\b0 to register an input in the angular we need to use ngModel directive so that the angular knows it needs to use that element\'85and also we provide a 
+\b name
+\b0  to that element\
+\
+
+\b (ngSubmit)=\'93\'94 
+\b0 event to be used in form tags. So when the submit button is clicked, the function provided in this event is called and default behaviour of HTTP request is prevented.
+\b \
+\
+<form (ngSubmit)=\'93onSubmit(f)\'94 #f=\'93ngForm\'94>\
+\
+
+\b0 by this way we get access to the ng form object we a lot of key value pairs, which also include the form values entered by user. We create a local reference of the form and pass it to the submit function. and its type in function would be 
+\b NgForm.\
+\
+\
+We can also access the form by using @ViewChild( \'93f\'94 ) form : NgForm; in TS\
+\
+to set a default value , we need to pass a value in the ngModel=\'93<something>\'94\
+\
+
+\b0 certain form data can be grouped together by adding 
+\b ngModelGroup directive
+\b0  in the div containing the input tags.\
+
+\b ngModelGroup = \'93userData\'94\
+\
+a new object would be created inside value by name userData\
+then to create a local reference to it\
+#userData = \'93ngModelGroup\'93\
+\
+to set the value of the entire form-\
+this.signUpForm.setvalue(\{\
+	<need to pass the exact replica of the form object as in ngModel>\
+\
+\});\
+\
+\
+a better approach would be ->\
+\
+this.signUpForm.form.patchValue(\{\
+	<pass the value only which needs to be updated>\
+\});\
+\
+\
+\
+setValue- 
+\b0  to update whole form\
+
+\b patchValue- 
+\b0 to update a specific value\
+\
+to reset a form - not only resets the value but also the state of the form - like gets untouched etc\
+
+\b this.signUpForm.reset();\
+\
+\
+REACTIVE APPROACH - \
+\
+In app.module need to import = RectiveFormModule instead of just FormModule\
+\
+new form can be created by FOrmGroup -> 
+\b0  better approach would be to do it in the ngOnInit lifecycle method
+\b \
+\
+
+\b0 this.signForm = new FormGroup( \{ \
+\
+	\'91key\'92: new FormControl( <initial_value>  ),\
+	\'85.	\
+\
+ \});\
+
+\b \
+[formGroup] -> 
+\b0 to tell angular to use the form created in the app.component.ts
+\b \
+
+\b0 the above directive is added to the <form> tag\
+to link the input tags, need to use
+\b  \
+formControlName=\'93username\'94 
+\b0 in the respective tags
+\b \
+\
+\
+
+\b0 can add validators like requrired etc ->\
+\
+
+\b ;username\'92 : new FormControl( null, [ Validators.requrired, Validators.email ])\
+\
+
+\b0 In reactive approach to check for validations, instead of using reference as in traditional approach we can use 
+\b get
+\b0  helper method\
+\
+
+\b *ngIf = \'93 signUpForm.get( \'91email\'92 ).valid \'93\
+\
+
+\b0 Here 
+\b get 
+\b0  method can also take a path as a parameter.\
+This is used in case of FormGroup scenarios\
+We can use form grouping ->\
+by using \
+
+\b \'91user data\'92: new FormGroup( \{\
+	\'91username\'92 : \'91\'92,\
+	\'85.\
+\} );\
+\
+
+\b0 In HTML need to add 
+\b formGroupName=\'93userData\'94 , 
+\b0 directive\
+Then in this case, we also need to update the 
+\b get 
+\b0 method like ->\
+
+\b .get( userData.username )\
+\
+FormArray -> 
+\b0   holds an array of controls\
+
+\b \'91hobbies\'92 : new FormArray([])\
+\
+
+\b0 now new entries can be added in this formArray by->\
+
+\b this.signupFOrm.get(\'91hobbies\'92)\
+need to wrap this in FormArray to tell angular that this is type of FormArray\
+const control = new FormControl(null, Validators.reuired);\
+(<FormArray>this.signupFOrm.get(\'91hobbies\'92)).push( control );\
+\
+
+\b0 In HTML we need to add 
+\b  formArrayName=\'93hobbies\'94 
+\b0 directive
+\b \
+\
+*****************************************************\
+one approach when dealing with array of some objects ->\
+
+\b0 here ingredients is an array ->which contain ingredient objects which have 2 parameters\
+\
+so we have created a 
+\b FormArray
+\b0  as an array holder.\
+And inside this FormArray, we have  a 
+\b FormGroup
+\b0  to hold each object.\
+Inside each FormGroup we have 
+\b FormControl
+\b0  which contain values.\
+
+\b \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0 \cf19 \cb3 \expnd0\expndtw0\kerning0
+for\cf2  ( \cf16 let\cf2  \cf4 ingredient\cf2  \cf16 of\cf2  \cf4 recipe\cf2 .\cf4 ingredients\cf2 ) \{\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3           \cf4 recipeIngredients\cf2 .\cf18 push\cf2 (\cb1 \
+\cb3           \cf16 new\cf2  \cf17 FormGroup\cf2 (\{\cb1 \
+\cb3               \cf4 name:\cf2  \cf16 new\cf2  \cf17 FormControl\cf2 (\cf4 ingredient\cf2 .\cf4 name\cf2 ),\cb1 \
+\cb3               \cf4 amount:\cf2  \cf16 new\cf2  \cf17 FormControl\cf2 (\cf4 ingredient\cf2 .\cf4 amount\cf2 ),\cb1 \
+\cb3             \})\cb1 \
+\cb3           );\cb1 \
+\cb3         \}\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+HTML side would also need to take care of the 
+\b0 formGroupName ->\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+         \cf20 <\cf16 div\cf2  \cb1 \
+\cb3             \cf4 class\cf2 =\cf5 "row"\cf2  \cb1 \
+\cb3             *\cf4 ngFor\cf2 =\cf5 "let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"\cf2 \cb1 \
+\cb3             [\cf4 formGroupName\cf2 ]=\cf5 "i"\cf20 >\cf2 \cb1 \
+\cb3             \cf20 <\cf16 div\cf2  \cf4 class\cf2 =\cf5 "col-xs-8"\cf20 >\cf2 \cb1 \
+\cb3               \cf20 <\cf16 input\cf2  \cb1 \
+\cb3                 \cf4 type\cf2 =\cf5 "text"\cf2                  \cb1 \
+\cb3                 \cf4 class\cf2 =\cf5 "form-control"\cf2 \cb1 \
+\cb3                 \cf4 formControlName\cf2 =\cf5 "name"\cf20 >\cf2 \cb1 \
+\cb3             \cf20 </\cf16 div\cf20 >\cf2 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+*****************************************************\
+\
+Creating custom validations- >\
+\
+forbiddenUserName ( control: FormControl  ) : \{[s: string] : boolean \}  \{\
+	if (   ) \{\
+		return true;\
+	\}\
+	return null;\
+\} \
+\
+then this functions needs to be called at the time of adding validations to the form control . here we also need to bind -> \'91this\'92 if we need to use value of any variable defined in the class inside the function. Since angular won\'92t know at the time of validating which variable we are referring to.\
+\
+\
+
+\b0 We can use the error msgs to display custom error messages for different scenarios   ->\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf20 \cb3 \expnd0\expndtw0\kerning0
+<\cf16 span\cf2  *\cf4 ngIf\cf2 =\cf5 "signUpForm.get('username').errors['forbiddenUser']"\cf20 >\cf2 This name is invalid\cf20 </\cf16 span\cf20 >\cf2 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+Asynchronours Validator ->\
+
+\b0 need to return a promise or an observable just like forbiddenUserName fucntion\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf18 \cb3 \expnd0\expndtw0\kerning0
+forbiddenEmail\cf2 (\cf4 control\cf2 : \cf17 FormControl\cf2 ) : \cf17 Promise\cf2 <\cf17 any\cf2 > | \cf17 Observable\cf2 <\cf17 any\cf2 > \{\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3     \cf16 const\cf2  \cf4 promise\cf2  = \cf16 new\cf2  \cf17 Promise\cf2 <\cf17 any\cf2 >( (\cf4 resolve\cf2 , \cf4 reject\cf2 )\cf16 =>\cf2  \{\cb1 \
+\cb3       \cf18 setTimeout\cf2 ( ()\cf16 =>\cf2  \{\cb1 \
+\cb3         \cf19 if\cf2 (\cf4 control\cf2 .\cf4 value\cf2  === \cf5 'test@test.com'\cf2 ) \{\cb1 \
+\cb3           \cf18 resolve\cf2 (\{\cf5 'forbiddenEmail'\cf4 :\cf2  \cf16 true\cf2 \});\cb1 \
+\cb3         \} \cf19 else\cf2  \{\cb1 \
+\cb3           \cf18 resolve\cf2 (\cf16 null\cf2 );\cb1 \
+\cb3         \}\cb1 \
+\cb3       \}, \cf6 1500\cf2 );\cb1 \
+\cb3     \});\cb1 \
+\
+\cb3     \cf19 return\cf2  \cf4 promise\cf2 ;\cb1 \
+\cb3   \}\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \
+
+\b0 We can listen to value or status change in the form by using 2 inbuilt functions->\
+this.signupform.valueChange.subscribe(\
+	(value) => console.log(value)\
+);\
+\
+similar is the statusChange method\
+\
+also we can use 
+\b setValue
+\b0  and
+\b  patchValue
+\b0  and 
+\b reset 
+\b0 as seen before in template driven approach\
+\
+
+\b .\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+ one trick to add a REGEX expression as a regex in an input ->\
+pattern = \'93 ^[1-9] + [0-9]*$  \'93 \
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+PIPES - \
+\
+
+\b0 for a custom pipe ->\
+need to add a class and implement 
+\b PipeTransform class\
+
+\b0 \
+and also override the transform function\
+
+\b \
+transform( value: any) \{\}\
+\
+
+\b0 to use the pipes, need to add the declaration in app.module\
+\
+NOW to use it in HTML, we need to add a decorator in the class file\
+\
+@Pipe(\{\
+	name: \'91\'92\
+\})
+\b \
+\
+\
+Pipe doesn\'92t run when the data changes, but it runs only when the input for that filter triggering it changes.\
+\
+
+\b0 If when a pipe is applied, and the data changes the changed data wouldn\'92t be shown in the applied filter output.\
+If we need to see the changes, we need to  use another declaration ->  \
+\
+
+\b pure: false ->\
+\
+
+\b0  but it would cause a performance issue so not recommended\
+
+\b \
+async - 
+\b0 pipe can be used when dealing with promise or observables. because otherwise there value may be undefined when the page is actually loaded
+\b \
+ \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+HTTP -\
+\
+
+\b0 To use http request -> HTTP service needs to be requested\
+
+\b \
+
+\b0 To send a request to server ->\
+
+\b \
+this.http.post( \'91path to server\'92, servers ) ;\
+\
+\
+.json is important in path to server to tell the firebase server we need to work on the data\
+\
+HEADERS - >\
+
+\b0 can be created using H
+\b eaders object 
+\b0 \
+\
+new Headers( \{ \'91Content-Type\'92: \'91application/json\'92 \} )
+\b \
+\
+now these headers can be passed in the post method, by passing an object  after the servers, with key value pair\
+\{\
+\'91headers\'92 : headers\
+\}\
+\
+\
+need to import rxjs/Rx , to use all the functions on observable\
+\
+.map() function can be used to alter the data that we get and again transmit it as an observable\
+\
+\
+\
+
+\b0 to handle error scenarios -> \
+.catch(\
+	(error: Response) => \{\
+	//handle the error\
+	//we also need to return an observable, but unlike .map function, catch doesn\'92t convert it into observable.\
+	//to do this use \
+\
+	return Observable.throw(error)\
+;	\
+\}\
+)
+\b \
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Modules - \
+\
+declarations
+\b0  - which components , directives the app uses\
+\
+
+\b imports
+\b0  - which other module the app uses  \
+\
+
+\b providers - 
+\b0 services used along whole app\
+\
+
+\b bootstrap - 
+\b0 root component , where everything starts 
+\b \
+\
+* Feature Modules - \
+	\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\b0 \
+}
