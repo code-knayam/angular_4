@@ -26,4 +26,7 @@ export class HeaderComponent {
         this.authService.logOutUser();
     }
 
+    isLoggedIn() {
+        return this.authService.isLoggedIn();
+    }
 }

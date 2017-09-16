@@ -5,13 +5,15 @@
 \red194\green126\blue101;\red167\green197\blue152;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
 \red88\green118\blue71;\red133\green96\blue154;\red38\green38\blue38;\red255\green255\blue255;\red197\green35\blue42;
 \red241\green241\blue241;\red70\green137\blue204;\red67\green192\blue160;\red212\green214\blue154;\red183\green111\blue179;
-\red109\green109\blue109;}
+\red109\green109\blue109;\red31\green36\blue45;\red255\green255\blue255;\red228\green58\blue65;\red239\green240\blue242;
+}
 {\*\expandedcolortbl;;\cssrgb\c83137\c83137\c83137;\cssrgb\c11765\c11765\c11765;\cssrgb\c61176\c86275\c99608;
 \cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
 \csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c52157\c37647\c60392;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000;\cssrgb\c82353\c21961\c21569;
 \cssrgb\c95686\c95686\c95686;\cssrgb\c33725\c61176\c83922;\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;\cssrgb\c77255\c52549\c75294;
-\cssrgb\c50196\c50196\c50196;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww20580\viewh13680\viewkind0
+\cssrgb\c50196\c50196\c50196;\cssrgb\c16078\c18824\c23137;\cssrgb\c100000\c100000\c100000;\cssrgb\c92549\c32157\c32157;\cssrgb\c94902\c95294\c96078;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww5540\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 To install angular client need to use npm module - \
@@ -1265,20 +1267,98 @@ declarations
 \b \
 \
 * Feature Modules - \
-	\
+
+\b0 	
+\b Common module
+\b0  must be added( imported ) to every feature module\
+Same module cannot be declared twice\
+\
+Registering route in feature module ->\
+	RouterModule.forRoot() -> can be called only once in the app.module\
+\
+	ROuterModule.forChild() -> must be called if routing declared in the feature modules\
+\
+
+\b Lazy Loading -> loading a component dynamically to increase app performance\
+
+\b0 in the app-routing.module we do something like this ->\
+\{ path: \'91recipe\'92, loadChildren: \'91./recipes/recipe.moule#RecipesModule\'92 \}\
+\
+
+\b loadChildren : \'91 <path>#<className> \'91\
+\
+Lazy loaded routes protection- \
+\
+\pard\pardeftab720\sl440\sa400\partightenfactor0
+
+\f3\b0\fs36 \cf21 \cb22 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec21 You can add canActivate to the lazy loaded routes but that of course means, that you might load code which in the end can't get accessed anyways. It would be better to check that BEFORE\'a0loading the code.\
+You can enforce this behavior by adding the\'a0
+\f4 \cf23 \cb24 \strokec23 canLoad
+\f3 \cf21 \cb22 \strokec21 \'a0 guard to the route which points to the lazily loaded module:\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f4 \cf23 \cb24 \strokec23 \{ path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', canLoad: [AuthGuard] \}
+\f3 \cf21 \cb22 \strokec21 \'a0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+Suppose if AppModule, FeatureModule and a lazyLoaded Feature Module uses same service then ->\
+\
+
+\b0 AppModule and FeatureModule will have a same instance of that service, created at time of app launch. but the lazy load feature module will have a different instance. Angular will create a 
+\b child injector
+\b0  of that particular service.
+\b \
 \
 \
+same case would be applicable in case of sharedModule.\
+
+\b0 If we have FeatureModule eagerly loaded and a sharedModule using same service, then they will use same instance of that service. But the lazy loaded module using a shared module will have a different instance of that service. Since angular will create a child injector of that service. Just like in above case.\
+
+\b Also we should never provide service in a shared module. Its not a recommended behaviour.\
+\
+Core Module ->\
+
+\b0 Module which are only used in the appComponent , like the headers. They should be kept inside the CoreModule. ( Again a way to keep our code clean and maintainable )\
+Only imported by appModule, so we can provide our services there
+\b \
+\
+Just-in-time compilation->\
+
+\b0 default behaviour\
+Development -> production -> App downloaded in browser -> Angular parses and complies templates ( to js ) \{ didn\'92t have chance before )
+\b \
+\
+Ahead-of-time Compilation ->\
+
+\b0 better approach\
+development -> allow angular to parse and compile templates ( to js ) ->  production -> app downloaded in browser \
+-> Makes app faster\
+-> Template gets checked during development - error can be handled in a much better approach\
+-> smaller file size- unused feature can be stripped and compiler itself isn\'92t shipped since code is already compiled
+\b \
 \
 \
+Use AOT with CLI ->\
+ng build  - -prod  - - aot \
+\
+To pre load a lazy loaded module->\
+
+\b0 it might happen that while loading code for lazy loaded there might be a slight lag.\
+This can be avoided by using 
+\b preloadingStrategy.: PreloadAllModules 
+\b0 in app-routing.module with RouterModule passing it as an object parameter with appRputes
+\b \
+What this does is it preloads all the lazy loaded modules, while the application is running\
 \
 \
-\
-\
-\
-\
-\
-\
-\
+Before deployment need to edit value base-href ->\
+
+\b0 if at root domain, it should be just \'91\'92\
+if it is within a domain, it should contain that path
+\b \
 \
 \
 
