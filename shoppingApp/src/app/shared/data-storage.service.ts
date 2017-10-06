@@ -1,6 +1,7 @@
 import { Response, Http } from "@angular/http";
 import { Injectable } from "@angular/core";
 import "rxjs/Rx";
+import { HttpClient } from "@angular/common/http";
 
 import { RecipeService } from "app/recipes/recipe.service";
 import { Recipe } from "app/recipes/recipe.model";
@@ -10,21 +11,20 @@ import { AuthService } from "app/auth/auth.service";
 export class DataStorageService {
 
     constructor(
-            private http: Http, 
+            private httpClient: HttpClient, 
             private recipeService: RecipeService,
             private authService: AuthService) {}
 
     saveRecipe() {
         const token = this.authService.getToken();
-        return this.http.put('https://shoppingapp-72939.firebaseio.com/recipe.json?auth=' + token, this.recipeService.getRecipes() );
+        return this.httpClient.put('https://shoppingapp-72939.firebaseio.com/recipe.json', this.recipeService.getRecipes() );
     }
 
     fetchRecipe() {
         const token = this.authService.getToken();
-        return this.http.get('https://shoppingapp-72939.firebaseio.com/recipe.json?auth=' + token)
+        return this.httpClient.get<Recipe[]>('https://shoppingapp-72939.firebaseio.com/recipe.json')
         .map(
-            (response: Response) => {
-                const recipes: Recipe[] = response.json();                
+            (recipes) => {                
                 for(let recipe of recipes ) {
                     if( !recipe['ingredients'] ) {
                         console.log(recipe);
