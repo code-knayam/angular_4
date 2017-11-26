@@ -2,10 +2,6 @@ import * as ShoppingListActions from './shopping-list.actions';
 
 import { Ingredient } from 'app/shared/ingredient.model';
 
-export interface AppState {
-    shoppingList : State
-}
-
 export interface State {
     ingredients : Ingredient[],
     editedIngridient : Ingredient,
@@ -37,7 +33,9 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
             const ingredient = state.ingredients[state.editedIngridientIndex];
             const updatedIngredient = {
                 ...ingredient, 
-                ...action.payload.ingredient
+                ...action.payload.ingredient,
+                editedIngridient: null, 
+                editedIngridientIndex: -1
             };
             const ingredients = [...state.ingredients];
             ingredients[state.editedIngridientIndex] = updatedIngredient;
@@ -50,7 +48,9 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
             oldIngredients.splice(state.editedIngridientIndex, 1);
             return {
                 ...state, 
-                ingredients: oldIngredients
+                ingredients: oldIngredients,
+                editedIngridient: null, 
+                editedIngridientIndex: -1
             };
         case ShoppingListActions.START_EDIT:
             const editedIngridient  = {...state.ingredients[action.payload]};
@@ -58,6 +58,12 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
                 ...state,
                 editedIngridient: editedIngridient, 
                 editedIngridientIndex: action.payload
+            };
+        case ShoppingListActions.STOP_EDIT:
+            return {
+                ...state,
+                editedIngridient: null, 
+                editedIngridientIndex: -1
             };
         default:
             return state;

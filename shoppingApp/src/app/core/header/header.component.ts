@@ -1,15 +1,28 @@
 import { Component} from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
 import { DataStorageService } from "app/shared/data-storage.service";
 import { AuthService } from "app/auth/auth.service";
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import * as fromApp from 'app/store/app.reducers';
+import * as fromAuth from 'app/auth/store/auth.reducers';
 
 @Component ({
     selector : 'app-header',
     templateUrl : './header.component.html'
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+    authState: Observable<fromAuth.State>;
 
-    constructor(private dataStorageService: DataStorageService, private authService: AuthService) {}
+    constructor(private dataStorageService: DataStorageService, 
+                private authService: AuthService,
+                private store: Store<fromApp.AppState>) {}
+
+    ngOnInit() {
+        this.authState = this.store.select('auth');
+    }    
 
     onSave() {
         this.dataStorageService.saveRecipe().subscribe(
@@ -24,9 +37,5 @@ export class HeaderComponent {
 
     onLogOut() {
         this.authService.logOutUser();
-    }
-
-    isLoggedIn() {
-        return this.authService.isLoggedIn();
     }
 }
