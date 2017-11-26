@@ -16,12 +16,12 @@ export class DataStorageService {
             private authService: AuthService) {}
 
     saveRecipe() {
-        const token = this.authService.getToken();
+        // const token = this.authService.getToken();
         return this.httpClient.put('https://shoppingapp-72939.firebaseio.com/recipe.json', this.recipeService.getRecipes() );
     }
 
     fetchRecipe() {
-        const token = this.authService.getToken();
+        // const token = this.authService.getToken();
         return this.httpClient.get<Recipe[]>('https://shoppingapp-72939.firebaseio.com/recipe.json')
         .map(
             (recipes) => {                
