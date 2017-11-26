@@ -10,32 +10,31 @@ export class ShoppingListService {
     new Ingredient( 'Test Ingredient 2', 20)
   ];
 
-  getIngredients() {
-    return this.ingredients.slice();
-  }
+  // getIngredients() {
+  //   return this.ingredients.slice();
+  // }
 
   getIngredient(index: number) {
     return this.ingredients[index];
   }
 
-  addItem( ingredient : Ingredient ) {
-    this.ingredients.push( ingredient );
-    this.ingredientAdded.next( this.getIngredients() );
-  }
+  // addItem( ingredient : Ingredient ) {
+  //   this.ingredients.push( ingredient );
+  //   this.ingredientAdded.next( this.getIngredients() );
+  // }
 
-  addItems( ingredient : Ingredient[] ) {
-    this.ingredients.push( ...ingredient );
-    
-  }
+  // addItems( ingredient : Ingredient[] ) {
+  //   this.ingredients.push( ...ingredient );
+  // }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
     this.ingredients[index] = newIngredient;
-    this.ingredientAdded.next( this.getIngredients() );
+    this.ingredientAdded.next( this.ingredients.slice() );
   }
 
   deleteIngredient(index: number) {
     this.ingredients.splice(index, 1);
-    this.ingredientAdded.next( this.getIngredients() );
+    this.ingredientAdded.next( this.ingredients.slice() );
   }
 
 }
