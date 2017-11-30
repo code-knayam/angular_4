@@ -7,6 +7,7 @@ import { AuthService } from "app/auth/auth.service";
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import * as fromApp from 'app/store/app.reducers';
 import * as fromAuth from 'app/auth/store/auth.reducers';
+import * as AuthActions from 'app/auth/store/auth.actions';
 
 @Component ({
     selector : 'app-header',
@@ -36,6 +37,7 @@ export class HeaderComponent implements OnInit {
     }
 
     onLogOut() {
-        this.authService.logOutUser();
+        // this.authService.logOutUser();        
+        this.store.dispatch(new AuthActions.LogOut());
     }
 }
