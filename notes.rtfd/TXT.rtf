@@ -16,7 +16,7 @@
 \cssrgb\c31373\c34118\c38824;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww5300\viewh16000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww7020\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 To install angular client need to use npm module - \
@@ -1476,7 +1476,7 @@ W
 Will update the cli inside your project\'a0(probably theres a command to just update, without reinstalling it):\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl340\partightenfactor0
 \ls1\ilvl0
-\f6\fs24 \cf21 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+\f6\fs24 \cf21 \cb13 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
 rm -rf node_modules \cf25 \cb1 \
 \ls1\ilvl0\cf21 \cb13 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
 npm uninstall --save-dev angular-cli \cf25 \cb1 \
@@ -1544,6 +1544,40 @@ Also the actions file need to be registered in app.module -> EffectsModule.forRo
 \
 \
 \
+@ngrx/router-store - \
+
+\b0 Add - StoreRouterConnectingModule imports in app.module\
+\
+
+\b @ngrx/store-devtools\
+
+\b0 need a chrome extension - 
+\b redux devtools\
+this can be used to debug the state of the application.\
+\
+
+\b0 \
+
+\b import StoreDevtoolsModule in app.module\
+
+\b0 need to call 
+\b instrument() 
+\b0 function on above module\
+\
+\
+To user these only in development env and not in prouction - \
+
+\b import \{environment\} from \'91./../environment/environment\'92\
+\
+\
+For lazily loaded modules - >\
+while registering the StoreModule in the recipes.module file, StoreModule.forFeature(\'91recipes\'92, recipeReducer) must be called.\
+This tells angular to include this feature on the appState once the feature is globally loaded.\
+\
+\
+\
+\
+@ngrx/withLatestForm() -> to combine one observable with a another one, get value of any subscription (store.select)\
 \
 \
 \

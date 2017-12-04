@@ -8,6 +8,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import * as fromApp from 'app/store/app.reducers';
 import * as fromAuth from 'app/auth/store/auth.reducers';
 import * as AuthActions from 'app/auth/store/auth.actions';
+import * as RecipeActions from '../../recipes/store/recipe.actions';
 
 @Component ({
     selector : 'app-header',
@@ -26,14 +27,16 @@ export class HeaderComponent implements OnInit {
     }    
 
     onSave() {
-        this.dataStorageService.saveRecipe().subscribe(
-            (response) => console.log(response),
-            (error) => console.log(error)
-        );
+        // this.dataStorageService.saveRecipe().subscribe(
+        //     (response) => console.log(response),
+        //     (error) => console.log(error)
+        // );
+        this.store.dispatch(new RecipeActions.StoreRecipe());
     }
 
     onFetch() {
-        this.dataStorageService.fetchRecipe();
+        // this.dataStorageService.fetchRecipe();
+        this.store.dispatch(new RecipeActions.FetchRecipe() );
     }
 
     onLogOut() {
