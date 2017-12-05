@@ -23,7 +23,7 @@ import { AuthEffects } from 'app/auth/store/auth.effects';
     ErrorPageComponent,     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'my-universal-app'}),
     HttpClientModule,
     AppRoutingModule,       
     SharedModule,
