@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from "app/app-routing.module";
@@ -30,6 +31,7 @@ import { AuthEffects } from 'app/auth/store/auth.effects';
     ShoppingListModule,
     AuthModule,
     CoreModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
     StoreRouterConnectingModule,
