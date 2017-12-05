@@ -16,7 +16,7 @@
 \cssrgb\c31373\c34118\c38824;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww7020\viewh16000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww3160\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 To install angular client need to use npm module - \
@@ -1476,7 +1476,7 @@ W
 Will update the cli inside your project\'a0(probably theres a command to just update, without reinstalling it):\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl340\partightenfactor0
 \ls1\ilvl0
-\f6\fs24 \cf21 \cb13 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+\f6\fs24 \cf21 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
 rm -rf node_modules \cf25 \cb1 \
 \ls1\ilvl0\cf21 \cb13 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
 npm uninstall --save-dev angular-cli \cf25 \cb1 \
@@ -1584,11 +1584,30 @@ This tells angular to include this feature on the appState once the feature is g
 \
 \
 \
+Register the script in package.json\
+TO RUN THE BUILD -  npm run build:ssr\
 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Creating a server for server side rendering ->\
+
+\b0 \
+reflect-metadata - handle meta data\
 \
+
+\b npm install \'97save express
+\b0 \
+express - node js framework\
+
+\b \
+npm install \'97save @nguniversal/express-engine\
+
+\b0 rendering engine - to render js templates
+\b \
 \
-\
-\
+npm install \'97save @nguniversal/module-map-ngfactory-loader\
+
+\b0 package server side code to manage correctly all modules
+\b \
 \
 \
 \
