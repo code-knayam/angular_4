@@ -18,7 +18,7 @@
 \cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;\cssrgb\c50196\c50196\c50196;\cssrgb\c33725\c61176\c83922;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww6840\viewh16000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww6120\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 To install angular client need to use npm module - \
@@ -1680,7 +1680,20 @@ To use the same animate() function instead of duplicating the code, just use
 State for an element that hasn\'92t been added yet -> void ( 
 \b0 reserved keyword )\
 \
-keyframes() method in animate function -> define which state in an animation should take how long during a transition
+keyframes() method in animate function -> define which state in an animation should take how long during a transition\
+\
+
+\b group() 
+\b0 can be used to execute 2 or more animate() simultaneously\
+\
+
+\b animation callback - \
+	[@divState.start]=\'93animationStarted()\'94 ->
+\b0 animationStarted() method will be triggered when animation starts\
+\
+
+\b 	[@divState.done]=\'93animationEnded()\'94 ->
+\b0 animationEnded() method will be triggered when animation ends
 \b \
 
 \b0 \
