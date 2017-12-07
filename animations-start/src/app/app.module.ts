@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SharedComponent
   ],
   imports: [
     BrowserModule,
