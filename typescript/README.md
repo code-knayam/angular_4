@@ -1,4 +1,4 @@
-#Typescript points
+# Typescript points
 
 Intall typescript package first - 
 ## npm install -g typescript
