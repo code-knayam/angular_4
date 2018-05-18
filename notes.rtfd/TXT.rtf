@@ -16,16 +16,18 @@
 \cssrgb\c31373\c34118\c38824;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww6880\viewh16000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww9340\viewh13640\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 To install angular client need to use npm module - \
-\
+\f0\fs24 \cf0 fng To install angular client need to use npm module - \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
 sudo npm install -g @angular/cli\
 \
 TO create a new app - \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b  ng new <app_name>
+\b \cf0  ng new <app_name>
 \b0 \
 	ng new my-first-app\
 	will make a new folder and download all dependencies\
@@ -80,16 +82,18 @@ need to add some code in
 \
 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b Typescript
+\b \cf0 Typescript
 \b0  - super set to javascript - more features than vanilla JS ( types, classes , interfaces ) \
 \
 TO add bootstrap , we can import it in index.html file or better way would be to install it using 
 \b npm\
 npm install  - -save bootstrap\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 Open angular-cli.json \'97> styles array add reference to bootstrap file downloaded - \'93../node_modules/bootstrap/dist/css/bootstrap.min.css\'94\
+\b0 \cf0 Open angular-cli.json \'97> styles array add reference to bootstrap file downloaded - \'93../node_modules/bootstrap/dist/css/bootstrap.min.css\'94\
 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
 in app.component.ts - selector\'92s value is set as app-root \'97>so its replaced with the html in app.component files\
 \
@@ -97,11 +101,13 @@ In main.ts - bootstraoModules starts our project by passing the module\
 In app.module.te - inside bootstrap lists all components that the app should know to run\
 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b Components - \
+\b \cf0 Components - \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 all app related content goes into app folder - components\
+\b0 \cf0 all app related content goes into app folder - components\
 component is defined in .ts file and the template url is provided in it.\
 \
 Ex - 
@@ -125,8 +131,9 @@ Ex -
 
 \f0 \cf0 \cb1 \
 Here the app-server is the name to be used while using it in html\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b <app-server></app-server>
+\b \cf0 <app-server></app-server>
 \b0 \
 \
 To use this component  it needs to be declared in app.module.ts\
@@ -144,8 +151,9 @@ ng g c <component-name>\
 * use \'97spec false -> to prevent creation of testing file \
 \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 To write  multi line string in TS - 
+\b0 \cf0 To write  multi line string in TS - 
 \b `   ` 
 \b0 needs to used
 \b \
@@ -176,13 +184,16 @@ event binding - (event) = \'93expr\'94\
 \
 2 way binding\
 [(ngModel)] = \'93data\'94\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\b \cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
 String interpolation - \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 \
+\b0 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b ** 
+\b \cf0 ** 
 \b0 \
 to add type of variable in typescript - \
 	serverID : number = 10;\
@@ -192,12 +203,14 @@ to add type of variable in typescript - \
 \b0 \
 
 \b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 \{\{ <should be able to convert to a string> \}\}\
+\b0 \cf0 \{\{ <should be able to convert to a string> \}\}\
 cannot write multi line string\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b **\
+\b \cf0 **\
 to define a method in typescript\
 	
 \b0 getServerStatus() \{\
@@ -205,8 +218,9 @@ to define a method in typescript\
 	\}
 \b \
 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 to bind html - \
+\b0 \cf0 to bind html - \
 <p [innerText] = \'93variable_name\'94></p>\
 \
 property binding and string interpolation shouldn\'92t be used together\
@@ -244,8 +258,9 @@ You then also need to add the import from
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0 Directives are instructions in the DOM \
+\b0 \cf0 Directives are instructions in the DOM \
 \
 for ngIf - * is required - * depicts structural directive\
 so used like 
@@ -1652,9 +1667,8 @@ Aniamtions - \
 
 \f0\b \cf0 \kerning1\expnd0\expndtw0 \
 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\b0 \cf0 in trigger, 
+\b0 in trigger, 
 \b divState
 \b0  is the name of element that animation needs to be hooked to.\
 then we define the state of the element within 
@@ -1670,12 +1684,10 @@ now animation can be added by
 To use the same animate() function instead of duplicating the code, just use 
 \b \'91normal <=> highlighted'
 \b0 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\b \cf0 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\b \
 
-\b0 \cf0 To use any state, use 
+\b0 To use any state, use 
 \b \'93 * \'94\
 \
 State for an element that hasn\'92t been added yet -> void ( 
@@ -1683,9 +1695,8 @@ State for an element that hasn\'92t been added yet -> void (
 \
 keyframes() method in animate function -> define which state in an animation should take how long during a transition\
 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\b \cf0 group() 
+\b group() 
 \b0 can be used to execute 2 or more animate() simultaneously\
 \
 
@@ -1697,9 +1708,8 @@ keyframes() method in animate function -> define which state in an animation sho
 \b 	[@divState.done]=\'93animationEnded()\'94 ->
 \b0 animationEnded() method will be triggered when animation ends
 \b \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\b0 \cf0 \
+\b0 \
 \
 import these functions from 
 \b @angular/animations, was previously @angular/corespon
